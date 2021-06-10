@@ -1,0 +1,7 @@
+{
+  "name": "Primera_Clase",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
