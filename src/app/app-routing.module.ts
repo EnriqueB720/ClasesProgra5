@@ -11,6 +11,27 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'catalogo',
+    children: [
+      {
+        path: "",
+        loadChildren: () => import('./catalogo/catalogo.module').then( m => m.CatalogoPageModule)
+      },
+      {
+        path: ":catalogoId",
+        loadChildren: ()=> import('./catalogo/detail/detail.module').then(m => m.DetailPageModule)
+      },
+      {
+        path: "add",
+        loadChildren: ()=> import('./catalogo/add/add.module').then(m => m.AddPageModule)
+      },
+      {
+        path: ':catalogoId/edit',
+        loadChildren: () => import('./catalogo/edit/edit.module').then(m => m.EditPageModule)
+      }
+    ]
+  },
 ];
 
 @NgModule({

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/catalogo" ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Producto - {{producto.title}}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button [routerLink] = "['./', 'edit']">
+        <ion-icon name="pencil" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-button (click) = "delete()">
+        <ion-icon name="trash" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-label>{{ producto.title}}</ion-label>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        {{producto.description}}
+      </ion-col>
+      <ion-col>
+        <ion-img src="https://empresas.blogthinkbig.com/wp-content/uploads/2019/11/Imagen3-245003649.jpg?w=800"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
